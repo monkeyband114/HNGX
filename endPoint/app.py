@@ -6,15 +6,14 @@ app = FastAPI()
 
 @app.get("/info")
 async def get_info(
-    slack_name: str = Query(None),
-    track: str = Query(None)
-):
+    slack_name: str = "michael voke",
+    track: str = "backend"
 
     current_day = datetime.now(pytz.utc).strftime("%A")
     utc_time = datetime.utcnow().isoformat() + 'Z'
 
-    github_file_url = "https://github.com/username/repo/blob/main/main.py"
-    github_repo_url = "https://github.com/username/repo"
+    github_file_url = "https://github.com/monkeyband114/HNGX/blob/1ea309610467cfb46447c752a617bd5e5fd2c6cc/endPoint/app.py"
+    github_repo_url = "https://github.com/monkeyband114/HNGX.git"
 
     return {
         "slack_name": slack_name,
