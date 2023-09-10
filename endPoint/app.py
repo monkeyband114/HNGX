@@ -8,6 +8,7 @@ app = FastAPI()
 async def get_info(
     slack_name: str = "michael voke",
     track: str = "backend"
+):
 
     current_day = datetime.now(pytz.utc).strftime("%A")
     utc_time = datetime.utcnow().isoformat() + 'Z'
