@@ -4,9 +4,9 @@ import pytz
 
 app = FastAPI()
 
-@app.get("/info")
+@app.get("/api")
 async def get_info(
-    slack_name: str = "michael voke",
+    slack_name: str = "michaelvoke",
     track: str = "backend"
 ):
 
@@ -25,3 +25,6 @@ async def get_info(
         "github_repo_url": github_repo_url,
         "status_code": 200
     }
+    
+    
+    
