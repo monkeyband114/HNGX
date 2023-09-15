@@ -1,7 +1,9 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
+from typing import Union
+
 
 class Person(BaseModel):
-    id: int = Field(default_factory=lambda: auto_id()) 
+    id:  Union[int, None] = None
     name: str
     
     
