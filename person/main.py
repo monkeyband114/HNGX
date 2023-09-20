@@ -23,10 +23,19 @@ def read_db():
         return json.load(f)
 
 # function to write to db.json
-def write_db(db):
+def write_db(db): 
     with open("db.json", "w") as f:
         json.dump(db, f)
+
+
+@app.get("/api")     
+async def all_person():
+  db = read_db()
+  
+  return {"persons": db["persons"]}
         
+        
+# create a person
 @app.post("/api")
 async def create_person(person: Person):
     db = read_db()

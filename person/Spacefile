@@ -4,7 +4,6 @@ micros:
   - name: person
     src: ./
     engine: python3.9
-    primary: true
     run: uvicorn main:app
     public_routes:
       - "/*"
